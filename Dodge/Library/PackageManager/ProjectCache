@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637811941683265326
-    m_Hash: 4232660727
+      ticks: 637812771661312474
+    m_Hash: 2151677095
   m_LockFileStatus:
     m_FilePath: D:/Unity/GitHub/Dodge/Dodge/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637811941767386668
-    m_Hash: 398154054
+      ticks: 637812771661312474
+    m_Hash: 3589040643
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
