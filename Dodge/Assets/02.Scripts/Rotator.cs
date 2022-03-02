@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +7,8 @@ public class Rotator : MonoBehaviour
     public float rotationSpeed = 60f;
     void Update()
     {
-        // Rotate ¸Ş¼­µå´Â ÀÔ·Â°ª(¸Å°³º¯¼ö)·Î X, Y, ZÃà¿¡ ´ëÇÑ È¸Àü°ªÀ» ¹Ş°í
-        // ÇöÀç È¸Àü »óÅÂ¿¡¼­ ÀÔ·ÂµÈ °ª¸¸Å­ »ó´ëÀûÀ¸·Î ´õ È¸ÀüÇÕ´Ï´Ù.
+        // Rotate ë©”ì„œë“œëŠ” ì…ë ¥ê°’(ë§¤ê°œë³€ìˆ˜)ë¡œ X, Y, Zì¶•ì— ëŒ€í•œ íšŒì „ê°’ì„ ë°›ê³ 
+        // í˜„ì¬ íšŒì „ ìƒíƒœì—ì„œ ì…ë ¥ëœ ê°’ë§Œí¼ ìƒëŒ€ì ìœ¼ë¡œ ë” íšŒì „í•©ë‹ˆë‹¤.
         transform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f);
     }
 }

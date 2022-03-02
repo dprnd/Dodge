@@ -1,47 +1,47 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // ÀÌµ¿¿¡ »ç¿ëÇÒ ¸®Áöµå¹Ùµğ ÄÄÆ÷³ÍÆ®
+    // ì´ë™ì— ì‚¬ìš©í•  ë¦¬ì§€ë“œë°”ë”” ì»´í¬ë„ŒíŠ¸
     public Rigidbody playerRigidbody;
-    // ÀÌµ¿ ¼Ó·Â
+    // ì´ë™ ì†ë ¥
     public float speed = 6f;
-    // ³» ÀÚ½ÅÀ» ´ãÀ» º¯¼ö
+    // ë‚´ ìì‹ ì„ ë‹´ì„ ë³€ìˆ˜
     public GameObject my;
 
     private void Start()
     {
-        //°ÔÀÓ ¿ÀºêÁ§Æ®¿¡¼­ Rigidbody ÄÄÆ÷³ÍÆ®¸¦ Ã£¾Æ
-        //playerRigidbody¿¡ ÇÒ´ç
+        //ê²Œì„ ì˜¤ë¸Œì íŠ¸ì—ì„œ Rigidbody ì»´í¬ë„ŒíŠ¸ë¥¼ ì°¾ì•„
+        //playerRigidbodyì— í• ë‹¹
         playerRigidbody = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        // ¼öÆòÃà°ú ¼öÁ÷ÃàÀÇ ÀÔ·Â°ªÀ» °¨ÁöÇØ¼­ ÀúÀå
+        // ìˆ˜í‰ì¶•ê³¼ ìˆ˜ì§ì¶•ì˜ ì…ë ¥ê°’ì„ ê°ì§€í•´ì„œ ì €ì¥
         float xInput = Input.GetAxis("Horizontal");
-        // Å°º¸µå : 'A', <- : À½ÀÇ¹æÇâ : -1.0f
-        // Å°º¸µå : 'D', -> : ¾çÀÇ¹æÇâ : +1.0f
+        // í‚¤ë³´ë“œ : 'A', <- : ìŒì˜ë°©í–¥ : -1.0f
+        // í‚¤ë³´ë“œ : 'D', -> : ì–‘ì˜ë°©í–¥ : +1.0f
         float zInput = Input.GetAxis("Vertical");
-        // Å°º¸µå : 'W', ¡ã : ¾çÀÇ¹æÇâ : +1.0f
-        // Å°º¸µå : 'S', ¡å : À½ÀÇ¹æÇâ : -1.0f
+        // í‚¤ë³´ë“œ : 'W', â–² : ì–‘ì˜ë°©í–¥ : +1.0f
+        // í‚¤ë³´ë“œ : 'S', â–¼ : ìŒì˜ë°©í–¥ : -1.0f
 
-        // ½ÇÁ¦ ÀÌµ¿ ¼Óµµ¸¦ ÀÔ·Â°ª°ú ÀÌµ¿ ¼Ó·ÂÀ» »ç¿ëÇØ °áÁ¤
+        // ì‹¤ì œ ì´ë™ ì†ë„ë¥¼ ì…ë ¥ê°’ê³¼ ì´ë™ ì†ë ¥ì„ ì‚¬ìš©í•´ ê²°ì •
         float xSpeed = xInput * speed;
         float zSpeed = zInput * speed;
 
-        // Vector3 ¼Óµµ¸¦ (xSpeed, 0f, zSpeed) »ı¼º
+        // Vector3 ì†ë„ë¥¼ (xSpeed, 0f, zSpeed) ìƒì„±
         Vector3 newVelocity = new Vector3(xSpeed, 0, zSpeed);
-        //Vector3´Â µ¥ÀÌÅÍÇüÅÂ¿¡ newVelocity¶ó´Â º¯¼ö¸¦ ¸¸µç°Í
-        //²À new (Vector3)¸¦ »ç¿ëÇØ¾ßÇÔ
+        //Vector3ëŠ” ë°ì´í„°í˜•íƒœì— newVelocityë¼ëŠ” ë³€ìˆ˜ë¥¼ ë§Œë“ ê²ƒ
+        //ê¼­ new (Vector3)ë¥¼ ì‚¬ìš©í•´ì•¼í•¨
 
-        //¸®Áöµğ¹ÙµğÀÇ (¹°¸®ÀûÀÎ ÈûÀÌ ¾Æ´Ï¶ó) ¼Óµµ¿¡ newVelocity ÇÒ´ç
+        //ë¦¬ì§€ë””ë°”ë””ì˜ (ë¬¼ë¦¬ì ì¸ í˜ì´ ì•„ë‹ˆë¼) ì†ë„ì— newVelocity í• ë‹¹
         playerRigidbody.velocity = newVelocity;
-        //´©ÀûÀº +=
+        //ëˆ„ì ì€ +=
 
-        // ÇÑÁÙ·Î Ãà¾à °¡´É
+        // í•œì¤„ë¡œ ì¶•ì•½ ê°€ëŠ¥
         //playerRigidbody.velocity = new Vector3(xInput * speed, 0f, zInput * speed);
     }
     void DirectInput()
@@ -67,10 +67,10 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         my.SetActive(false);
-        //gameObject.SetActive(false);   À¯´ÏÆ¼°¡ ¾Ë¾Æ¼­ ÁøÇàÇØÁÖ±äÇÔ(Æí¹ı)
-        //gameObject -> º¯¼ö   GameObject -> µ¥ÀÌÅÍÀÇ Å¸ÀÔ,ÇüÅÂ
+        //gameObject.SetActive(false);   ìœ ë‹ˆí‹°ê°€ ì•Œì•„ì„œ ì§„í–‰í•´ì£¼ê¸´í•¨(í¸ë²•)
+        //gameObject -> ë³€ìˆ˜   GameObject -> ë°ì´í„°ì˜ íƒ€ì…,í˜•íƒœ
 
-        // ¾À¿¡ Á¸ÀçÇÏ´Â GameManager Å¸ÀÔÀÇ ¿ÀºêÁ§Æ®¸¦ Ã£¾Æ¼­ °¡Á®¿À±â
+        // ì”¬ì— ì¡´ì¬í•˜ëŠ” GameManager íƒ€ì…ì˜ ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¾ì•„ì„œ ê°€ì ¸ì˜¤ê¸°
         GameManager gameManager = FindObjectOfType<GameManager>();
 
         gameManager.EndGame();
